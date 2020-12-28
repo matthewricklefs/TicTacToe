@@ -1,9 +1,16 @@
 import React from 'react';
 
-export default class Square extends React.Component {
+class Square extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: null,
+    }
+  }
+
   render() {
     return (
-      <button className="square">
+      <button className="square" onClick={ () => alert('click') }>
         {this.props.value}
       </button>
     );
@@ -59,8 +66,9 @@ export class Game extends React.Component {
 }
 
 // ========================================
-
 ReactDOM.render(
   <Game />,
   document.getElementById('root')
 );
+
+
